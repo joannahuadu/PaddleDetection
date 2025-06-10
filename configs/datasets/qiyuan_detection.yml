@@ -1,0 +1,21 @@
+metric: COCO
+num_classes: 10
+
+TrainDataset:
+  name: COCODataSet
+  image_dir: trainval/images
+  anno_path: instances_trainval.json
+  dataset_dir: /mnt/data1/workspace/data/data/qiyuan2
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+
+EvalDataset:
+  name: COCODataSet
+  image_dir: val/images
+  anno_path: instances_val.json
+  dataset_dir: /mnt/data1/workspace/data/data/qiyuan2
+  allow_empty: true
+
+TestDataset:
+  name: ImageFolder
+  anno_path: instances_test.json # also support txt (like VOC's label_list.txt)
+  dataset_dir: /mnt/data1/workspace/data/data/qiyuan2 # if set, anno_path will be 'dataset_dir/anno_path'
